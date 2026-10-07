@@ -1,3 +1,4 @@
 export function formatTask(task) {
-  throw new Error('Implementation required: formatTask');
+  const text = task.text.replace(/[\\\[\]]/g, character => `\\${character}`);
+  return `${task.done ? '- [x] ' : '- [ ] '}${text}`;
 }
